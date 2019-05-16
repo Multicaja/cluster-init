@@ -2,6 +2,8 @@ FROM python:2-alpine3.9
 
 WORKDIR /app
 
+COPY ansible.cfg /etc/ansible/
+
 RUN apk update && \
     apk add ansible libffi-dev openssl-dev gcc musl-dev openssh && \
     pip install --upgrade pip && pip install packaging azure apache-libcloud pycrypto && \
